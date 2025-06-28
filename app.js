@@ -1,8 +1,8 @@
 const express=require('express');
 
 
-const userRouter=require('./Routes/userRouter');
-const {hosterRouter}=require('./Routes/hosterRouter');
+const storeRouter=require('./Routes/storeRouter');
+const hosterRouter=require('./Routes/hosterRouter');
 
 const errorHandel=require('./controllers/error')
 
@@ -19,11 +19,11 @@ app.set('views', 'views');
 app.use(express.static(path.join(rootPath,'public')));
 
 app.use(express.urlencoded({extended:true}))
-app.use(userRouter);
+app.use(storeRouter);
 app.use(hosterRouter);
 app.use(errorHandel.pageNotFound)
 
 
-app.listen(3000,()=>{
+app.listen(300,()=>{
     console.log("Port in localhost:3000");
 })
